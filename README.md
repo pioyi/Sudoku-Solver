@@ -3,5 +3,5 @@
 <ul>
   <li>Initialize your sudoku board</li>
   <li>Call the .solve() method</li>
-  <li>Call .print_board() to get a fancy representation of your puzzle! 😁</li>
+  <li>Call .print_board() to get a fancy representation of your puzzle!</li>
  </ul>
