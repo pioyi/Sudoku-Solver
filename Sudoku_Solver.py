@@ -4,13 +4,13 @@ class Sudoku():
 
     def is_valid(self,n,pos):
         # Checking the row
-        for i in range(len(self.Board[pos[0]])):
-            if self.Board[pos[0]][i] == n and pos[1] != i:
+        for i,x in enumerate(self.Board[pos[0]]):
+            if x == n and pos[1] != i:
                 return False
 
         # Checking the column
-        for i in range(len(self.Board)):
-            if self.Board[i] != pos[0] and self.Board[i][pos[1]] == n:
+        for x in self.Board:
+            if x != pos[0] and x[pos[1]] == n:
                 return False
 
         # Cheking the number's block
@@ -23,10 +23,10 @@ class Sudoku():
         return True
         
     def print_board(self):
-        for i in range(len(self.Board)):
+        for i,x in enumerate(self.Board):
             if i % 3 == 0 and i != 0:
                 print("------|-------|------")
-            print(' | '.join(' '.join(str(b).replace("0"," ") for b in self.Board[i][a*3:a*3+3]) for a in range(3)))
+            print(' | '.join(' '.join(str(b).replace("0"," ") for b in x[a:a+3]) for a in range(0,9,3)))
 
     def search_empty(self):
         for row in range(9):
@@ -36,18 +36,19 @@ class Sudoku():
         return None
 
     def solve(self):
-        if (w:= self.search_empty()):
-            row,col = w
-            for i in range(1,10):
-                if self.is_valid(i,(row,col)):
-                    self.Board[row][col] = i
+        if not (w:= self.search_empty()):
+            return True
 
-                    if self.solve():
-                        return True
+        row,col = w
+        for i in range(1,10):
+            if self.is_valid(i,(row,col)):
+                self.Board[row][col] = i
 
-                    self.Board[row][col] = 0
-            return False
-        return True
+                if self.solve():
+                    return True
+
+                self.Board[row][col] = 0
+        return False
 
 Sudoku1 = Sudoku([
     [7,8,0,4,0,0,1,2,0],
