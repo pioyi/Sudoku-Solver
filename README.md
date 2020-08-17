@@ -5,3 +5,6 @@
   <li>Call the .solve() method</li>
   <li>Call .print_board() to get a fancy representation of your puzzle!</li>
  </ul>
+
+## Screenshots
+![](https://i.imgur.com/AXqjplF.png?1raw=true)
