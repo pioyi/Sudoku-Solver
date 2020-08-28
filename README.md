@@ -1,10 +1,8 @@
-# Sudoku Solver Using Backtracking ↩
-<h3> Created in Python! 🐍</h3>
-<ul>
-  <li>Initialize your sudoku board</li>
-  <li>Call the .solve() method</li>
-  <li>Call .print_board() to get a fancy representation of your puzzle!</li>
- </ul>
+# Sudoku Solver Using Backtracking
 
-## Screenshots
-![](https://i.imgur.com/AXqjplF.png?1raw=true)
+A sudoku solver in the form of a class. <br>
+🐍 Written in **Python**!
+
+### Repository Preview
+ - This algorithm uses `backtracking` to find a valid answer.
+ - To utilise it, **initialize your sudoku board, call the .solve() method and use .print_board() to get a fancy representation of your puzzle.**
